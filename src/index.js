@@ -6,12 +6,14 @@ const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
 
 const UniversitiesAPI = require('./datasources/universities');
+const LaunchAPI = require('./datasources/launch');
 
 const internalEngineDemo = require('./engine-demo');
 
 // set up any dataSources our resolvers need
 const dataSources = () => ({
   UniversitiesAPI: new UniversitiesAPI(),
+  LaunchAPI: new LaunchAPI(),
 });
 
 // Set up Apollo Server

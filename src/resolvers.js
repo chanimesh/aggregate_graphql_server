@@ -3,7 +3,8 @@ module.exports = {
     universities: async (_, __, { dataSources }) =>{
       const brazilUniv = await dataSources.UniversitiesAPI.getUniversitiesOfBrazil();
       const indiaUniv = await dataSources.UniversitiesAPI.getUniversitiesOfIndia();
-      return [...brazilUniv, ...indiaUniv]
+      const spacexData = await dataSources.LaunchAPI.getAllLaunches();
+      return [...spacexData, ...brazilUniv, ...indiaUniv]
     },
   },
 };
